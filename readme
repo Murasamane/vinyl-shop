@@ -1,0 +1,123 @@
+# Vinyl Records Store API
+
+A RESTful API for managing vinyl records, users, and orders.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Endpoints](#endpoints)
+- [Entities](#entities)
+- [Data Models](#data-models)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Installation
+
+To install the project, run the following command:
+
+```bash
+npm install
+
+
+
+Endpoints
+
+The API has the following endpoints:
+
+Users
+POST /api/users: Create a new user
+Request Body:
+username: string
+email: string
+password: string
+Response: 201 Created with the newly created user
+GET /api/users: Get all users
+Response: 200 OK with an array of users
+GET /api/users/:id: Get a user by ID
+Response: 200 OK with the user
+PATCH /api/users/:id: Update a user
+Request Body:
+username: string
+email: string
+Response: 200 OK with the updated user
+DELETE /api/users/:id: Delete a user
+Response: 204 No Content
+Records
+POST /api/records: Create a new record
+Request Body:
+title: string
+artist: string
+genre: string
+price: number
+Response: 201 Created with the newly created record
+GET /api/records: Get all records
+Response: 200 OK with an array of records
+GET /api/records/:id: Get a record by ID
+Response: 200 OK with the record
+PATCH /api/records/:id: Update a record
+Request Body:
+title: string
+artist: string
+genre: string
+price: number
+Response: 200 OK with the updated record
+DELETE /api/records/:id: Delete a record
+Response: 204 No Content
+Orders
+POST /api/orders: Create a new order
+Request Body:
+userId: number
+recordId: number
+Response: 201 Created with the newly created order
+GET /api/orders: Get all orders
+Response: 200 OK with an array of orders
+GET /api/orders/:id: Get an order by ID
+Response: 200 OK with the order
+DELETE /api/orders/:id: Delete an order
+Response: 204 No Content
+Entities
+The API uses the following entities:
+
+User: represents a user
+id: number
+username: string
+email: string
+password: string
+Record: represents a record
+id: number
+title: string
+artist: string
+genre: string
+price: number
+Order: represents an order
+id: number
+userId: number
+recordId: number
+Data Models
+The API uses the following data models:
+
+CreateUserDto: represents a new user
+username: string
+email: string
+password: string
+UpdateUserDto: represents an updated user
+username: string
+email: string
+CreateRecordDto: represents a new record
+title: string
+artist: string
+genre: string
+price: number
+UpdateRecordDto: represents an updated record
+title: string
+artist: string
+genre: string
+price: number
+CreateOrderDto: represents a new order
+userId: number
+recordId: number
+API Documentation
+The API uses Swagger for documentation. You can access the documentation by visiting http://localhost:3000/api.
+```
